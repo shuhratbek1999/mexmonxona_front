@@ -16,7 +16,7 @@ const stripePromise = loadStripe(
   "pk_test_51MWMckF05dpmbe1lu5dUAyzgSiQiES5dgxcIqPceiUbizwDDmUwVps4dbjDS7eLhzbnwBrqk122zl5SVydeGailb00v1JNekOo"
 );
 const payNow = async () => {
-  const res = await fetch("http://localhost:5000/create-checkout-session", {
+  const res = await fetch("http://176.53.163.29:7006/create-checkout-session", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ roomName: "Deluxe Room", price: 120 }),

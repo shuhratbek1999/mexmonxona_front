@@ -259,7 +259,7 @@ const statusClasses = {
 const makePayment = async (booking) => {
   try {
     const response = await axios.post(
-      "http://localhost:5000/create_checkout_session",
+      "http://176.53.163.29:7006/create_checkout_session",
       {
         bookingId: booking.id,
         amount: booking.total_price,
