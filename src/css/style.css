@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-success {
+    @apply bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+
+  .table-header {
+    @apply bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .badge-warning {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-danger {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-info {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .sidebar-link {
+    @apply flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors duration-200;
+  }
+
+  .sidebar-link-active {
+    @apply flex items-center px-4 py-3 bg-gray-700 text-white;
+  }
+}
+
+/* Maxsus animatsiyalar */
+@layer utilities {
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .slide-up-enter-active,
+  .slide-up-leave-active {
+    transition: all 0.3s ease-out;
+  }
+
+  .slide-up-enter-from,
+  .slide-up-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Vue DatePicker uchun maxsus stil */
+.dp__theme_light {
+  --dp-background-color: #ffffff;
+  --dp-text-color: #212121;
+  --dp-hover-color: #f3f3f3;
+  --dp-hover-text-color: #212121;
+  --dp-hover-icon-color: #959595;
+  --dp-primary-color: #1976d2;
+  --dp-primary-text-color: #f8f5f5;
+  --dp-secondary-color: #c0c4cc;
+  --dp-border-color: #ddd;
+  --dp-menu-border-color: #ddd;
+  --dp-border-radius: 4px;
+  --dp-disabled-color: #f6f6f6;
+  --dp-scroll-bar-color: #959595;
+  --dp-success-color: #76d275;
+  --dp-success-color-disabled: #a3d9b1;
+  --dp-icon-color: #959595;
+  --dp-danger-color: #ff6f60;
+  --dp-highlight-color: rgba(25, 118, 210, 0.1);
+}
+
+/* Scrollbar uchun maxsus stil */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive design uchun qo'shimcha utilitilar */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Print uchun stil */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-break-before {
+    page-break-before: always;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-break-inside-avoid {
+    page-break-inside: avoid;
+  }
+}
