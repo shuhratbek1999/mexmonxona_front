@@ -7,7 +7,8 @@ import "./css/style.css";
 import axios from "axios";
 import { useAlert } from "./composables/useAlert";
 const app = createApp(App);
-let BASE_URL = "http://176.53.163.29:7006/api/v1/admin-app";
+// let BASE_URL = "http://176.53.163.29:7006/api/v1/admin-app";
+let BASE_URL = "http://localhost:5000/api/v1/admin-app";
 axios.defaults.baseURL = BASE_URL;
 // Pinia ni sozlash
 const pinia = createPinia();

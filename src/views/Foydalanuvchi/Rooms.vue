@@ -22,13 +22,13 @@
           <h1
             class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
           >
-            Xonalarimiz
+            Our Rooms
           </h1>
           <p
             class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 leading-relaxed"
           >
-            Turli turdagi qulay xonalarimiz bilan tanishing va o'zingizga mosini
-            tanlang
+            Explore our variety of comfortable rooms and pick the perfect one
+            for your stay.
           </p>
         </div>
       </div>
@@ -47,7 +47,7 @@
               class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-2xl font-semibold flex items-center justify-center space-x-3"
             >
               <i class="fas fa-filter"></i>
-              <span>Filtrlarni Ko'rsatish</span>
+              <span>Show Filters</span>
               <i
                 class="fas fa-chevron-down transition-transform duration-300"
                 :class="{ 'rotate-180': showMobileFilters }"
@@ -69,17 +69,17 @@
                 class="block text-sm font-medium text-gray-700 mb-3 flex items-center space-x-2"
               >
                 <i class="fas fa-bed text-blue-500"></i>
-                <span>Xona Turi</span>
+                <span>Room Type</span>
               </label>
               <div class="relative">
                 <select
                   v-model="filters.roomType"
                   class="w-full bg-gray-50/80 border border-gray-300 rounded-2xl px-4 py-3 pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 group-hover:border-blue-300 appearance-none"
                 >
-                  <option value="">Hamma Turlar</option>
-                  <option value="standart">Standard</option>
-                  <option value="lyuks">Lyuks</option>
-                  <option value="president">VIP</option>
+                  <option value="">All Types</option>
+                  <option value="standard">Standard</option>
+                  <option value="lux">Luxury</option>
+                  <option value="vip">VIP</option>
                   <option value="premium">Premium</option>
                 </select>
                 <i
@@ -94,14 +94,14 @@
                 class="block text-sm font-medium text-gray-700 mb-3 flex items-center space-x-2"
               >
                 <i class="fas fa-tag text-green-500"></i>
-                <span>Narx Oralig'i</span>
+                <span>Price Range</span>
               </label>
               <div class="relative">
                 <select
                   v-model="filters.priceRange"
                   class="w-full bg-gray-50/80 border border-gray-300 rounded-2xl px-4 py-3 pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 group-hover:border-blue-300 appearance-none"
                 >
-                  <option value="">Hamma Narxlar</option>
+                  <option value="">All Prices</option>
                   <option value="0-50">$0 - $50</option>
                   <option value="50-100">$50 - $100</option>
                   <option value="100-200">$100 - $200</option>
@@ -119,18 +119,18 @@
                 class="block text-sm font-medium text-gray-700 mb-3 flex items-center space-x-2"
               >
                 <i class="fas fa-users text-purple-500"></i>
-                <span>Sig'im</span>
+                <span>Capacity</span>
               </label>
               <div class="relative">
                 <select
                   v-model="filters.capacity"
                   class="w-full bg-gray-50/80 border border-gray-300 rounded-2xl px-4 py-3 pl-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 group-hover:border-blue-300 appearance-none"
                 >
-                  <option value="">Hamma Sig'im</option>
-                  <option value="1">1 kishi</option>
-                  <option value="2">2 kishi</option>
-                  <option value="3">3 kishi</option>
-                  <option value="4">4+ kishi</option>
+                  <option value="">All Capacities</option>
+                  <option value="1">1 Person</option>
+                  <option value="2">2 Persons</option>
+                  <option value="3">3 Persons</option>
+                  <option value="4">4+ Persons</option>
                 </select>
                 <i
                   class="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"
@@ -144,13 +144,13 @@
                 class="block text-sm font-medium text-gray-700 mb-3 flex items-center space-x-2"
               >
                 <i class="fas fa-search text-orange-500"></i>
-                <span>Qidiruv</span>
+                <span>Search</span>
               </label>
               <div class="relative">
                 <input
                   v-model="filters.search"
                   type="text"
-                  placeholder="Xona raqami yoki nomi..."
+                  placeholder="Search by room number or name..."
                   class="w-full bg-gray-50/80 border border-gray-300 rounded-2xl px-4 py-3 pl-10 pr-10 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 group-hover:border-blue-300"
                 />
                 <i
@@ -172,14 +172,14 @@
                 class="text-sm text-gray-600 flex items-center lg:justify-center"
               >
                 <i class="fas fa-door-open mr-2"></i>
-                {{ filteredRooms.length }} ta xona
+                {{ filteredRooms.length }} rooms
               </div>
               <button
                 @click="resetFilters"
                 class="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-6 py-3 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 lg:w-full"
               >
                 <i class="fas fa-redo"></i>
-                <span class="hidden lg:inline">Tozalash</span>
+                <span class="hidden lg:inline">Reset Filters</span>
               </button>
             </div>
           </div>
@@ -201,7 +201,7 @@
                 class="w-16 h-16 border-4 border-transparent border-t-blue-500 rounded-full absolute top-0 animate-spin"
               ></div>
             </div>
-            <p class="text-gray-600 mt-4 text-lg">Xonalar yuklanmoqda...</p>
+            <p class="text-gray-600 mt-4 text-lg">Loading rooms...</p>
           </div>
         </div>
 
@@ -232,71 +232,19 @@
               <i class="fas fa-door-open text-4xl text-gray-400"></i>
             </div>
             <h3 class="text-2xl font-semibold text-gray-600 mb-4">
-              Xonalar Topilmadi
+              No Rooms Found
             </h3>
             <p class="text-gray-500 mb-6 leading-relaxed">
-              Filtr shartlariga mos xonalar mavjud emas. Iltimos, filtrlarni
-              o'zgartiring yoki barcha xonalarni ko'rish uchun quyidagi tugmani
-              bosing.
+              No rooms match your filter criteria. Adjust filters or click below
+              to see all rooms.
             </p>
             <button
               @click="resetFilters"
               class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 mx-auto"
             >
               <i class="fas fa-redo"></i>
-              <span>Barcha Xonalarni Ko'rsatish</span>
+              <span>Show All Rooms</span>
             </button>
-          </div>
-        </div>
-
-        <!-- Load More Button (if needed) -->
-        <div
-          v-if="!loading && filteredRooms.length > 0"
-          class="text-center mt-12 animate-fade-in-up"
-        >
-          <button
-            @click="loadMore"
-            class="bg-gradient-to-r from-gray-800 to-gray-900 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center space-x-3 mx-auto"
-          >
-            <i class="fas fa-plus"></i>
-            <span>Ko'proq Xonalarni Ko'rsatish</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="py-20 bg-white relative overflow-hidden">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Nima Uchun
-            <span
-              class="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent"
-              >Bizni</span
-            >
-            Tanlaysiz?
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            v-for="(feature, index) in features"
-            :key="feature.id"
-            class="text-center animate-fade-in-up"
-            :style="`animation-delay: ${index * 150}ms`"
-          >
-            <div
-              class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 transform hover:scale-110 transition-transform duration-300 shadow-lg"
-            >
-              <i :class="feature.icon" class="text-white text-2xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">
-              {{ feature.title }}
-            </h3>
-            <p class="text-gray-600 leading-relaxed">
-              {{ feature.description }}
-            </p>
           </div>
         </div>
       </div>
@@ -305,7 +253,6 @@
     <Footer />
   </div>
 </template>
-
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { useRoomStore } from "@/stores/rooms";
@@ -428,7 +375,6 @@ onMounted(async () => {
     transform: translateY(0);
   }
 }
-
 @keyframes pulseSlow {
   0%,
   100% {
@@ -438,39 +384,34 @@ onMounted(async () => {
     opacity: 0.2;
   }
 }
-
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
-
 .animate-pulse-slow {
   animation: pulseSlow 3s ease-in-out infinite;
 }
 
-/* Custom styles for select dropdown */
+/* Custom select styles */
 select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
 }
 
-/* Hide default dropdown arrow for custom styling */
+/* Hide default arrow */
 select::-ms-expand {
   display: none;
 }
 
-/* Responsive improvements */
+/* Responsive */
 @media (max-width: 1024px) {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 }
-
 @media (max-width: 768px) {
   .grid-cols-1 {
     grid-template-columns: 1fr;

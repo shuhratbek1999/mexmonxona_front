@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useAuthStore } from "@/stores/auth";
-const API_BASE_URL = "http://176.53.163.29:7006/api/v1/admin-app"; // Backend manzili
+const API_BASE_URL = "http://localhost:5000/api/v1/admin-app";
+// const API_BASE_URL = "http://176.53.163.29:7006/api/v1/admin-app";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
